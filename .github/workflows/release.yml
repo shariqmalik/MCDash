@@ -1,8 +1,9 @@
 name: Java CI
 
 on:
-  push:
-    tags: [ "v*" ]
+  workflow_dispatch:
+    push:
+      tags: [ "v*" ]
 
 jobs:
   create_release:
