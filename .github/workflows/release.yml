@@ -20,7 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
+      - name: Build with Maven
+        run: mvn -B package jacoco:report --file pom.xml -Daem.analyser.strict=true
+        
       - name: Build with Maven
         run: mvn clean compile assembly:single
 
